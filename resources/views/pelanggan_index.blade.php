@@ -1,5 +1,14 @@
 @extends('layouts.main')
 @section('content')
+<style>
+  body {
+      background-image: url('{{ asset('/lite/assets/img/madrid.png') }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+  }
+</style>
 <div class="wrapper">
   <!-- Sidebar -->
   <div class="sidebar" data-background-color="red">

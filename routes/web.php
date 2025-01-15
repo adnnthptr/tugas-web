@@ -38,4 +38,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('pelanggan',PelangganController::class);
     Route::get('pelanggan/laporan/cetak', [PelangganController::class, 'laporan']);
+
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
 });

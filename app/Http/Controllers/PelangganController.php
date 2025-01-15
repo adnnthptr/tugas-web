@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pelanggan; // Pastikan model Pelanggan ada
-use App\Models\Lapangan; // Pastikan model Lapangan ada
+use App\Models\Pelanggan; 
+use App\Models\Lapangan; 
 use Illuminate\Http\Request;
 
 class PelangganController extends Controller
 {
-    // Menampilkan daftar semua pelanggan dengan pagination
+    
     public function index()
     {
         // Ambil data pelanggan dengan pagination (10 data per halaman)

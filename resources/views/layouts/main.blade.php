@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <style>
+</style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Mini Soccer</title>
     <meta
@@ -42,6 +44,7 @@
     <link rel="stylesheet" href="{{ asset('lite/assets/css/demo.css') }}" />
   </head>
   <body>
+
     @yield('content')
     <!--   Core JS Files   -->
     <script src="{{ asset('lite/assets/js/core/jquery-3.7.1.min.js') }}"></script>
@@ -106,6 +109,10 @@
         lineColor: "#ffa534",
         fillColor: "rgba(255, 165, 52, .14)",
       });
+      <footer id="footer-background" class="footer-section">
+    @yield('footer')
+  </footer>
+
     </script>
   </body>
 </html>

@@ -2,10 +2,10 @@
 @section('content')
 <div class="wrapper">
   <!-- Sidebar -->
-  <div class="sidebar" data-background-color="dark">
+  <div class="sidebar" data-background-color="red">
     <div class="sidebar-logo">
       <!-- Logo Header -->
-      <div class="logo-header" data-background-color="dark">
+      <div class="logo-header" data-background-color="red">
         <a href="{{ url('/home', []) }}" class="logo">
           <img
             src="{{ asset('lite/assets/img/pet/logo.jpg') }}"
@@ -51,20 +51,46 @@
           </li>
           <li class="nav-item">
             <a data-bs-toggle="collapse" href="#base">
-              <i class="fas fa-car"></i>
+              <i class="fas fa-file-alt"></i>
               <p>Administrasi</p>
               <span class="caret"></span>
             </a>
             <div class="collapse" id="base">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="{{ url('laporan', []) }}">
+                  <a href="{{ url('administrasi', []) }}">
                     <span class="sub-item">Daftar Transaksi</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('laporan/create', []) }}">
+                  <a href="{{ url('administrasi/create', []) }}">
                     <span class="sub-item">Tambah Transaksi</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ url('administrasi/laporan/cetak', []) }}">
+                    <span class="sub-item">Laporan</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarLayouts">
+              <i class="fas fa-futbol"></i>
+              <p>Lapangan</p>
+              <span class="caret"></span>
+            </a>
+            <div class="collapse" id="sidebarLayouts">
+              <ul class="nav nav-collapse">
+                <li>
+                  <a href="{{ url('lapangan', []) }}">
+                    <span class="sub-item">Daftar lapangan</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ url('lapangan/create', []) }}">
+                    <span class="sub-item">Tambah lapangan</span>
                   </a>
                 </li>
                 <li>
@@ -76,47 +102,21 @@
             </div>
           </li>
           <li class="nav-item">
-            <a data-bs-toggle="collapse" href="#sidebarLayouts">
-              <i class="fas fa-users"></i>
-              <p>Pengguna</p>
-              <span class="caret"></span>
-            </a>
-            <div class="collapse" id="sidebarLayouts">
-              <ul class="nav nav-collapse">
-                <li>
-                  <a href="{{ url('pengguna', []) }}">
-                    <span class="sub-item">Daftar Pengguna</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ url('pengguna/create', []) }}">
-                    <span class="sub-item">Tambah Pengguna</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="{{ url('pengguna/laporan/cetak', []) }}">
-                    <span class="sub-item">Laporan</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
             <a data-bs-toggle="collapse" href="#forms">
-              <i class="fas fa-shopping-cart"></i>
-              <p>Transaksi</p>
+              <i class="fas fa-users"></i>
+              <p>Pelanggan</p>
               <span class="caret"></span>
             </a>
             <div class="collapse" id="forms">
               <ul class="nav nav-collapse">
                 <li>
                   <a href="{{ url('pelanggan', []) }}">
-                    <span class="sub-item">Daftar Pelanggan</span>
+                    <span class="sub-item">Daftar pelanggan</span>
                   </a>
                 </li>
                 <li>
                   <a href="{{ url('pelanggan/create', []) }}">
-                    <span class="sub-item">Tambah Pelanggan</span>
+                    <span class="sub-item">Tambah pelanggan</span>
                   </a>
                 </li>
                 <li>
@@ -136,46 +136,21 @@
           <li class="nav-item">
             <a data-bs-toggle="collapse" href="#profil">
               <i class="fas fa-user"></i>
-              <p>akun Saya</p>
+              <p>Akun Saya</p>
               <span class="caret"></span>
             </a>
             <div class="collapse" id="profil">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="profil/akun Saya.html">
-                    <span class="sub-item">Profil</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="profil/tables.html">
-                    <span class="sub-item">Register</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="profil/datatables.html">
-                    <span class="sub-item">Login</span>
-                  </a>
-                </li>
-                <li>
                   <a href="profil/datatables.html">
                     <span class="sub-item">Logout</span>
+                    <i class="fas fa-logout"></i>
                   </a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a data-bs-toggle="collapse" href="#Setting">
-                <i class="fas fa-cogs"></i>  
-                <p>Setting</p>
-            </a>
-          </li>
-          <li class="nav-item">
-              <a data-bs-toggle="collapse" href="#Tentang Kami">
-                  <i class="fas fa-info-circle"></i>  
-                  <p>Tentang Kami</p>
-              </a>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -186,7 +161,7 @@
     <div class="main-header">
       <div class="main-header-logo">
         <!-- Logo Header -->
-        <div class="logo-header" data-background-color="dark">
+        <div class="logo-header" data-background-color="red">
           <a href="index.html" class="logo">
             <img
               src="{{ asset('lite/assets/img/kaiadmin/logo_light.svg') }}"
@@ -267,7 +242,6 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i class="fa fa-envelope"></i>
               </a>
               <ul
                 class="dropdown-menu messages-notif-box animated fadeIn"
@@ -358,8 +332,8 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i class="fa fa-bell"></i>
-                <span class="notification">4</span>
+                
+               
               </a>
               <ul
                 class="dropdown-menu notif-box animated fadeIn"
@@ -409,7 +383,7 @@
                       </a>
                       <a href="#">
                         <div class="notif-icon notif-danger">
-                          <i class="fa fa-heart"></i>
+                          
                         </div>
                         <div class="notif-content">
                           <span class="block"> Farrah liked Admin </span>
@@ -433,7 +407,7 @@
                 href="#"
                 aria-expanded="false"
               >
-                <i class="fas fa-layer-group"></i>
+                
               </a>
               <div class="dropdown-menu quick-actions animated fadeIn">
                 <div class="quick-actions-header">
@@ -456,7 +430,7 @@
                           <div
                             class="avatar-item bg-warning rounded-circle"
                           >
-                            <i class="fas fa-map"></i>
+                           
                           </div>
                           <span class="text">Maps</span>
                         </div>
@@ -464,7 +438,7 @@
                       <a class="col-6 col-md-4 p-0" href="#">
                         <div class="quick-actions-item">
                           <div class="avatar-item bg-info rounded-circle">
-                            <i class="fas fa-file-excel"></i>
+                            
                           </div>
                           <span class="text">Reports</span>
                         </div>
@@ -474,7 +448,7 @@
                           <div
                             class="avatar-item bg-success rounded-circle"
                           >
-                            <i class="fas fa-envelope"></i>
+                            
                           </div>
                           <span class="text">Emails</span>
                         </div>
@@ -514,14 +488,14 @@
               >
                 <div class="avatar-sm">
                   <img
-                    src="{{ asset('lite/assets/img/profile.jpg') }}"
+                    src="{{ asset('lite/assets/img/pet/patrick.jpg') }}"
                     alt="..."
                     class="avatar-img rounded-circle"
                   />
                 </div>
                 <span class="profile-username">
                   <span class="op-7">Hi,</span>
-                  <span class="fw-bold">Hizrian</span>
+                  <span class="fw-bold">Fahri</span>
                 </span>
               </a>
               <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -536,8 +510,8 @@
                         />
                       </div>
                       <div class="u-text">
-                        <h4>Hizrian</h4>
-                        <p class="text-muted">hello@example.com</p>
+                        <h4>Fahri</h4>
+                        <p class="text-muted">fahryandana@example.com</p>
                         <a
                           href="profile.html"
                           class="btn btn-xs btn-secondary btn-sm"
@@ -568,103 +542,63 @@
     <div class="container">
       <div class="page-inner">
         <div
-          class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-        >
+          class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
           <div>
-            <h3 class="fw-bold mb-3">Laporan</h3>
+            <h3 class="fw-bold mb-3">Laporan Pelanggan</h3>
 
-          </div>
-          <div class="ms-md-auto py-2 py-md-0">
-            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
-            <a href="#" class="btn btn-primary btn-round">Add Customer</a>
           </div>
         </div>
-        @extends('layouts.app')
-
-        @section('content')
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <table class="table table-bordered table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>NO</th>
-                                        <th>Nama Pelanggan</th>
-                                        <th>Email</th>
-                                        <th>Nomor Telepon</th>
-                                        <th>Alamat</th>
-                                        <th>Kode Lapangan</th>
-                                        <th>Jumlah Jam</th>
-                                        <th>Status</th>
-                                        <th>Dibuat</th>
-                                        <th>Diperbarui</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($pelanggan as $item)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->nama }}</td>
-                                            <td>{{ $item->email }}</td>
-                                            <td>{{ $item->no_telepon ?? '-' }}</td>
-                                            <td>{{ $item->alamat ?? '-' }}</td>
-                                            <td>{{ $item->kode_lapangan ?? '-' }}</td>
-                                            <td>{{ $item->jumlah_jam }}</td>
-                                            <td>
-                                                <span class="badge text-bg-{{ $item->status == 'aktif' ? 'success' : 'danger' }}">
-                                                    {{ ucfirst($item->status) }}
-                                                </span>
-                                            </td>
-                                            <td>{{ $item->created_at->format('d M Y H:i') }}</td>
-                                            <td>{{ $item->updated_at->format('d M Y H:i') }}</td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="10" class="text-center">Tidak ada data pelanggan.</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
-                        </div>
+        <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-bordered table-striped table-hover">
+                          <thead>
+                              <tr>
+                                  <th>NO</th>
+                                  <th>Nama Pelanggan</th>
+                                  <th>Email</th>
+                                  <th>Nomor Telepon</th>
+                                  <th>Alamat</th>
+                                  <th>Kode Lapangan</th>
+                                  <th>Jumlah Jam</th>
+                                  <th>Status</th>
+                                  <th>Dibuat</th>
+                                  <th>Diperbarui</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @forelse ($pelanggan as $item)
+                                  <tr>
+                                      <td>{{ $loop->iteration }}</td>
+                                      <td>{{ $item->nama }}</td>
+                                      <td>{{ $item->email }}</td>
+                                      <td>{{ $item->no_telepon ?? '-' }}</td>
+                                      <td>{{ $item->alamat ?? '-' }}</td>
+                                      <td>{{ $item->kode_lapangan ?? '-' }}</td>
+                                      <td>{{ $item->jumlah_jam }}</td>
+                                      <td>
+                                          <span class="badge text-bg-{{ $item->status == 'aktif' ? 'success' : 'danger' }}">
+                                              {{ ucfirst($item->status) }}
+                                          </span>
+                                      </td>
+                                      <td>{{ $item->created_at->format('d M Y H:i') }}</td>
+                                      <td>{{ $item->updated_at->format('d M Y H:i') }}</td>
+                                  </tr>
+                              @empty
+                                  <tr>
+                                      <td colspan="10" class="text-center">Tidak ada data pelanggan.</td>
+                                  </tr>
+                              @endforelse
+                          </tbody>
+                      </table>
                     </div>
                 </div>
             </div>
-            
-            
-        </div>
-        @endsection
-        
-    </div>
-
-    <footer class="footer">
-      <div class="container-fluid d-flex justify-content-between">
-        <nav class="pull-left">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="http://www.themekita.com">
-                ThemeKita
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Help </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Licenses </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright">
-          2024, made with <i class="fa fa-heart heart text-danger"></i> by
-          <a href="http://www.themekita.com">ThemeKita</a>
-        </div>
-        <div>
-          Distributed by
-          <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
         </div>
       </div>
-    </footer>
+    </div>
+
   </div>
 </div>
 @endsection

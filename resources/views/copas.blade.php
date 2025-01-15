@@ -1,20 +1,11 @@
 @extends('layouts.main')
 @section('content')
-<style>
-  body {
-      background-image: url('{{ asset('/lite/assets/img/WC.png') }}');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-  }
-</style>
 <div class="wrapper">
   <!-- Sidebar -->
-  <div class="sidebar" data-background-color="red">
+  <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
       <!-- Logo Header -->
-      <div class="logo-header" data-background-color="red">
+      <div class="logo-header" data-background-color="dark">
         <a href="{{ url('/home', []) }}" class="logo">
           <img
             src="{{ asset('lite/assets/img/pet/logo.jpg') }}"
@@ -49,7 +40,7 @@
           <li class="nav-item active">
             <a href="{{ url('/home', []) }}" >
               <i class="fas fa-home"></i>
-              <p>Home</p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-section">
@@ -73,11 +64,11 @@
                 </li>
                 <li>
                   <a href="{{ url('administrasi/create', []) }}">
-                    <span class="sub-item">Tambah Transaksi</span>
+                    <span class="sub-item">Tambah Administrasi</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('administrasi/laporan/cetak', []) }}">
+                  <a href="{{ url('admministrasi/laporan/cetak', []) }}">
                     <span class="sub-item">Laporan</span>
                   </a>
                 </li>
@@ -86,24 +77,24 @@
           </li>
           <li class="nav-item">
             <a data-bs-toggle="collapse" href="#sidebarLayouts">
-              <i class="fas fa-futbol"></i>
-              <p>Lapangan</p>
+              <i class="fas fa-users"></i>
+              <p>Pengguna</p>
               <span class="caret"></span>
             </a>
             <div class="collapse" id="sidebarLayouts">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="{{ url('lapangan', []) }}">
-                    <span class="sub-item">Daftar Lapangan</span>
+                  <a href="{{ url('pengguna', []) }}">
+                    <span class="sub-item">Daftar Pengguna</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('lapangan/create', []) }}">
-                    <span class="sub-item">Tambah Lapangan</span>
+                  <a href="{{ url('pengguna/create', []) }}">
+                    <span class="sub-item">Tambah Pengguna</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('lapangan/laporan/cetak', []) }}">
+                  <a href="{{ url('pengguna/laporan/cetak', []) }}">
                     <span class="sub-item">Laporan</span>
                   </a>
                 </li>
@@ -112,24 +103,24 @@
           </li>
           <li class="nav-item">
             <a data-bs-toggle="collapse" href="#forms">
-              <i class="fas fa-users"></i>
-              <p>Pelanggan</p>
+              <i class="fas fa-shopping-cart"></i>
+              <p>Transaksi</p>
               <span class="caret"></span>
             </a>
             <div class="collapse" id="forms">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="{{ url('pelanggan', []) }}">
-                    <span class="sub-item">Daftar Pelanggan</span>
+                  <a href="{{ url('transaksi', []) }}">
+                    <span class="sub-item">Daftar Transaksi</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('pelanggan/create', []) }}">
-                    <span class="sub-item">Tambah Pelanggan</span>
+                  <a href="{{ url('transaksi/create', []) }}">
+                    <span class="sub-item">Tambah Transaksi</span>
                   </a>
                 </li>
                 <li>
-                  <a href="{{ url('pelanggan/laporan/cetak', []) }}">
+                  <a href="{{ url('transaksi/laporan/cetak', []) }}">
                     <span class="sub-item">Laporan</span>
                   </a>
                 </li>
@@ -174,8 +165,15 @@
             </div>
           </li>
           <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#Setting">
+                <i class="fas fa-cogs"></i>  
+                <p>Setting</p>
+            </a>
           </li>
           <li class="nav-item">
+              <a data-bs-toggle="collapse" href="#Tentang Kami">
+                  <i class="fas fa-info-circle"></i>  
+                  <p>Tentang Kami</p>
               </a>
           </li>
         </ul>
@@ -269,6 +267,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
+                <i class="fa fa-envelope"></i>
               </a>
               <ul
                 class="dropdown-menu messages-notif-box animated fadeIn"
@@ -278,6 +277,9 @@
                   <div
                     class="dropdown-title d-flex justify-content-between align-items-center"
                   >
+                    Messages
+                    <a href="#" class="small">Mark all as read</a>
+                  </div>
                 </li>
                 <li>
                   <div class="message-notif-scroll scrollbar-outer">
@@ -356,6 +358,9 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
+                <i class="fa fa-bell"></i>
+                <span class="notification">4</span>
+              </a>
               <ul
                 class="dropdown-menu notif-box animated fadeIn"
                 aria-labelledby="notifDropdown"
@@ -428,6 +433,7 @@
                 href="#"
                 aria-expanded="false"
               >
+                <i class="fas fa-layer-group"></i>
               </a>
               <div class="dropdown-menu quick-actions animated fadeIn">
                 <div class="quick-actions-header">
@@ -468,6 +474,10 @@
                           <div
                             class="avatar-item bg-success rounded-circle"
                           >
+                            <i class="fas fa-envelope"></i>
+                          </div>
+                          <span class="text">Emails</span>
+                        </div>
                       </a>
                       <a class="col-6 col-md-4 p-0" href="#">
                         <div class="quick-actions-item">
@@ -504,14 +514,14 @@
               >
                 <div class="avatar-sm">
                   <img
-                    src="{{ asset('lite/assets/img/pet/patrick.jpg') }}"
+                    src="{{ asset('lite/assets/img/profile.jpg') }}"
                     alt="..."
                     class="avatar-img rounded-circle"
                   />
                 </div>
                 <span class="profile-username">
                   <span class="op-7">Hi,</span>
-                  <span class="fw-bold">Fahri</span>
+                  <span class="fw-bold">Hizrian</span>
                 </span>
               </a>
               <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -520,18 +530,32 @@
                     <div class="user-box">
                       <div class="avatar-lg">
                         <img
-                          src="{{ asset('lite/assets/img/pet/patrick.jpg') }}"
+                          src="{{ asset('lite/assets/img/profile.jpg') }}"
                           alt="image profile"
                           class="avatar-img rounded"
                         />
                       </div>
                       <div class="u-text">
-                        <h4>Fahri</h4>
+                        <h4>Hizrian</h4>
                         <p class="text-muted">hello@example.com</p>
+                        <a
+                          href="profile.html"
+                          class="btn btn-xs btn-secondary btn-sm"
+                          >View Profile</a
+                        >
                       </div>
                     </div>
                   </li>
                   <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" href="#">My Balance</a>
+                    <a class="dropdown-item" href="#">Inbox</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Account Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                  </li>
                 </div>
               </ul>
             </li>
@@ -544,67 +568,127 @@
     <div class="container">
       <div class="page-inner">
         <div
-          class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-        >
+          class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
           <div>
-            <h3 class="fw-bold mb-3">Laporan</h3>
+            <h3 class="fw-bold mb-3">Data Laporan</h3>
 
           </div>
+          <div class="ms-md-auto py-2 py-md-0">
+            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
+            <a href="#" class="btn btn-primary btn-round">Add Customer</a>
+          </div>
         </div>
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>NO</th>
-                                    <th>Nama Pelanggan</th>
-                                    <th>Nomor Telepon</th>
-                                    <th>Email</th>
-                                    <th>Tanggal Reservasi</th>
-                                    <th>Waktu Mulai</th>
-                                    <th>Waktu Selesai</th>
-                                    <th>Biaya</th>
+                                    <th>No</th>
+                                    <th>Pengguna</th>
+                                    <th>Mobil</th>
+                                    <th>Tanggal Pemesanan</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Tanggal Selesai</th>
+                                    <th>Total Harga</th>
                                     <th>Status Pembayaran</th>
-                                    <th>Catatan</th>
-                                    <th>Dibuat</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($administrasi as $item)
+                                @foreach ($transaksi as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nama_pelanggan }}</td>
-                                        <td>{{ $item->nomor_telepon }}</td>
-                                        <td>{{ $item->email ?? '-' }}</td>
-                                        <td>{{ $item->tanggal_reservasi }}</td>
-                                        <td>{{ $item->waktu_mulai }}</td>
-                                        <td>{{ $item->waktu_selesai }}</td>
-                                        <td>Rp {{ number_format($item->biaya, 0, ',', '.') }}</td>
-                                        <td>
-                                            <span class="badge text-bg-{{ $item->status_pembayaran == 'Lunas' ? 'success' : 'warning' }}">
-                                                {{ ucfirst($item->status_pembayaran) }}
-                                            </span>
-                                        </td>
-                                        <td>{{ $item->catatan ?? '-' }}</td>
-                                        <td>{{ $item->created_at->format('d M Y H:i') }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->pengguna->name }}</td> <!-- Assuming 'pengguna' is related properly -->
+                                        <td>{{ $item->mobil->model }}</td> <!-- Assuming 'mobil' model is related properly -->
+                                        <td>{{ $item->tanggal_pemesanan }}</td>
+                                        <td>{{ $item->tanggal_mulai }}</td>
+                                        <td>{{ $item->tanggal_selesai }}</td>
+                                        <td>Rp {{ number_format($item->total_harga, 0, ',', '.') }}</td>
+                                        <td>{{ $item->status_pembayaran }}</td>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="12" class="text-center">Tidak ada data administrasi.</td>
-                                    </tr>
-                                @endforelse
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+      </div>
     </div>
 
+    <footer class="footer">
+      <div class="container-fluid d-flex justify-content-between">
+        <nav class="pull-left">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.themekita.com">
+                ThemeKita
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Help </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Licenses </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright">
+          2024, made with <i class="fa fa-heart heart text-danger"></i> by
+          <a href="http://www.themekita.com">ThemeKita</a>
+        </div>
+        <div>
+          Distributed by
+          <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+        </div>
       </div>
     </footer>
   </div>
 </div>
 @endsection
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>Nama Lapangan</th>
+                            <th>Kapasitas</th>
+                            <th>Status</th>
+                            <th>Dibuat</th>
+                            <th>Diperbarui</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($lapangan as $item)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->nama_lapangan }}</td>
+                                <td>{{ $item->kapasitas }}</td>
+                                <td>
+                                    <span class="badge text-bg-{{ $item->status == 'aktif' ? 'success' : 'danger' }}">
+                                        {{ ucfirst($item->status) }}
+                                    </span>
+                                </td>
+                                <td>{{ $item->created_at->format('d M Y H:i') }}</td>
+                                <td>{{ $item->updated_at->format('d M Y H:i') }}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="6" class="text-center">Tidak ada data lapangan.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>

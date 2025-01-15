@@ -1,8 +1,14 @@
-
-
-
 @extends('layouts.main')
 @section('content')
+<style>
+  body {
+      background-image: url('{{ asset('/lite/assets/img/barcelona.png') }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+  }
+</style>
 <div class="wrapper">
   <!-- Sidebar -->
   <div class="sidebar" data-background-color="red">
@@ -556,7 +562,7 @@
                   <div class="col col-stats ms-3 ms-sm-0">
                     <div class="administrasi">
                       <a href="{{ url('administrasi', []) }}">
-                        <p class="card-category">Daftar Administrasi</p>
+                        <p class="card-category" style="color: #32CD32; font-weight: bold;">Daftar Administrasi</p>
                       </a>
                     </div>
                   </div>
@@ -578,7 +584,7 @@
                   <div class="col col-stats ms-3 ms-sm-0">
                     <div class="lapangan">
                       <a href="{{ url('lapangan', []) }}">
-                        <p class="card-category">Lapangan</p>
+                        <p class="card-category" style="color: #32CD32; font-weight: bold;">Lapangan</p>
                       </a>
                     </div>
                   </div>
@@ -600,7 +606,7 @@
                   <div class="col col-stats ms-3 ms-sm-0">
                     <div class="pelanggan">
                         <a href="{{ url('pelanggan', []) }}">
-                      <p class="card-category">Pelanggan</p>
+                          <p class="card-category" style="color: #32CD32; font-weight: bold;">Pelanggan</p>
 
                     </div>
                   </div>
